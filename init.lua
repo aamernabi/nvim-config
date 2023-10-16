@@ -1,2 +1,2 @@
-require("aamernabi")
+require("core")
 
