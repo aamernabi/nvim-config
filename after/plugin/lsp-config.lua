@@ -1,6 +1,15 @@
 require('mason').setup()
 require('mason-lspconfig').setup({
-  ensure_installed = { 'lua_ls' }
+  ensure_installed = { 
+    'lua_ls',
+    'kotlin_language_server',
+    --'java_language_server',
+    'tsserver',
+    'pyright',
+    'jsonls',
+    'dockerls',
+    'docker_compose_language_service',
+  }
 })
 
 local on_attach = function (_, _)
@@ -20,5 +29,22 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 -- ...
 require("lspconfig").lua_ls.setup {
   on_attach = on_attach,
-  capabilities = capabilities 
+  capabilities = capabilities,
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = { 'vim' }
+      }
+    }
+  }
 }
+
+require("lspconfig").lua_ls.setup { on_attach = on_attach }
+require("lspconfig").kotlin_language_server.setup { on_attach = on_attach }
+-- require("lspconfig").java_language_server.setup { on_attach = on_attach }
+require("lspconfig").tsserver.setup { on_attach = on_attach }
+require("lspconfig").pyright.setup { on_attach = on_attach }
+require("lspconfig").jsonls.setup { on_attach = on_attach }
+require("lspconfig").dockerls.setup { on_attach = on_attach }
+require("lspconfig").docker_compose_language_service.setup { on_attach = on_attach }
+
