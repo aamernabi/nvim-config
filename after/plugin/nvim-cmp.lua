@@ -1,6 +1,8 @@
 local cmp = require('cmp')
 -- local cmp_select = { behaviour = cmp.SelectBehaviour.Select }
 
+require("luasnip/loaders/from_vscode").lazy_load()
+
 cmp.setup({
   snippet = {
     expand = function(args)
