@@ -1,19 +1,28 @@
-vim.g.mapleader = " "
+local opt = vim.opt
 
-vim.opt.backspace = '2'
-vim.opt.showcmd = true
-vim.opt.laststatus = 2
-vim.opt.autowrite = true
-vim.opt.cursorline = true
-vim.opt.autoread = true
+opt.backspace = '2'
+opt.showcmd = true
+opt.laststatus = 2
+opt.autowrite = true
+opt.cursorline = true
+opt.autoread = true
+opt.wrap = false
+opt.ignorecase = true
+opt.smartcase = true
+opt.iskeyword:append('-')
 
-vim.opt.tabstop = 2
-vim.opt.shiftwidth = 2
-vim.opt.shiftround = true
-vim.opt.expandtab = true
-vim.opt.clipboard = 'unnamedplus'
+opt.splitright = true
+opt.splitbelow = true
 
-vim.cmd [[ set noswapfile ]]
+opt.tabstop = 2
+opt.shiftwidth = 2
+opt.shiftround = true
+opt.expandtab = true
+opt.clipboard = 'unnamedplus'
+opt.autoindent = true
 
-vim.wo.number = true
+opt.relativenumber = true
+opt.number = false
+
+vim.cmd [[ set noswapfile ]] -- prevents the creation of swap files
 
