@@ -15,7 +15,7 @@ To utilize this configuration:
 ### Features
 
 - Configured using Lua to optimize performance and customization.
-- Utilizes Packer as the plugin manager for easy installation and management. (Will use LazyVim in future).
+- Utilizes Packer as the plugin manager for easy installation and management. (Will use [Lazy.nvim](https://github.com/folke/lazy.nvim) in future).
 - Implements LSP (Language Server Protocol) support for enhanced language-specific features.
 - more ..
 
