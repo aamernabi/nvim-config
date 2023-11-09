@@ -19,3 +19,6 @@ keymap.set('n', '<leader>tx', ':tabclose<CR>')
 keymap.set('n', '<leader>tn', ':tabn<CR>') -- next tab 
 keymap.set('n', '<leader>tp', ':tabp<CR>') -- previous tab
 
+-- buffers
+keymap.set('n', '<leader>bx', ':bd<CR>') -- close buffer
+

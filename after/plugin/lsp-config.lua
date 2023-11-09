@@ -3,7 +3,7 @@ require('mason-lspconfig').setup({
   ensure_installed = { 
     'lua_ls',
     'kotlin_language_server',
-    --'java_language_server',
+    'jdtls',
     'tsserver',
     'pyright',
     'jsonls',
@@ -41,7 +41,7 @@ require("lspconfig").lua_ls.setup {
 
 require("lspconfig").lua_ls.setup { on_attach = on_attach }
 require("lspconfig").kotlin_language_server.setup { on_attach = on_attach }
--- require("lspconfig").java_language_server.setup { on_attach = on_attach }
+require("lspconfig").jdtls.setup { on_attach = on_attach }
 require("lspconfig").tsserver.setup { on_attach = on_attach }
 require("lspconfig").pyright.setup { on_attach = on_attach }
 require("lspconfig").jsonls.setup { on_attach = on_attach }
