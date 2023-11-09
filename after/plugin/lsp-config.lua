@@ -34,17 +34,23 @@ require("lspconfig").lua_ls.setup {
     Lua = {
       diagnostics = {
         globals = { 'vim' }
-      }
-    }
+      },
+      workspace = {
+        library = {
+          [vim.fn.expand('$VIMRUNTIME/lua')] = true,
+          [vim.fn.stdpath('config') .. '/lua'] = true,
+        },
+      },
+    },
   }
 }
 
-require("lspconfig").lua_ls.setup { on_attach = on_attach }
-require("lspconfig").kotlin_language_server.setup { on_attach = on_attach }
-require("lspconfig").jdtls.setup { on_attach = on_attach }
-require("lspconfig").tsserver.setup { on_attach = on_attach }
-require("lspconfig").pyright.setup { on_attach = on_attach }
-require("lspconfig").jsonls.setup { on_attach = on_attach }
-require("lspconfig").dockerls.setup { on_attach = on_attach }
-require("lspconfig").docker_compose_language_service.setup { on_attach = on_attach }
+require("lspconfig").lua_ls.setup { on_attach = on_attach, capabilities = capabilities }
+require("lspconfig").kotlin_language_server.setup { on_attach = on_attach, capabilities = capabilities }
+require("lspconfig").jdtls.setup { on_attach = on_attach, capabilities = capabilities }
+require("lspconfig").tsserver.setup { on_attach = on_attach, capabilities = capabilities }
+require("lspconfig").pyright.setup { on_attach = on_attach, capabilities = capabilities }
+require("lspconfig").jsonls.setup { on_attach = on_attach, capabilities = capabilities }
+require("lspconfig").dockerls.setup { on_attach = on_attach, capabilities = capabilities }
+require("lspconfig").docker_compose_language_service.setup { on_attach = on_attach, capabilities = capabilities }
 

@@ -1,6 +1,7 @@
 local cmp = require('cmp')
 -- local cmp_select = { behaviour = cmp.SelectBehaviour.Select }
 
+-- load friendly-snippets
 require("luasnip/loaders/from_vscode").lazy_load()
 
 cmp.setup({
@@ -24,5 +25,6 @@ cmp.setup({
     { name = "luasnip" }, -- snippets
     { name = "buffer" }, -- text within the current buffer
     { name = "path" }, -- file system paths
+    { name = "cmdline" },
   }),
 })
