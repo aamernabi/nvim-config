@@ -1,6 +1,6 @@
 # nvim-config
 
-## My NeoVim Configuration
+#### My NeoVim Configuration
 
 This repository contains my personal NeoVim configuration. 
 
