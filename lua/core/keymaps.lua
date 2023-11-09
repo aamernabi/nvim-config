@@ -6,6 +6,7 @@ keymap.set('n', '<leader>pv', vim.cmd.Ex)
 keymap.set('n', '<C-a>', 'ggVG') -- select all
 keymap.set('n', '<leader>nh', ':nohl<CR>') -- hide search highlight
 keymap.set('n', 'x', '"_x') -- don't copy char when using x
+keymap.set('n', '<leader>xx', '"_dd') -- delete line and don't copy
 
 -- split window
 keymap.set('n', '<leader>sv', '<C-w>v') -- vertical
