@@ -1,5 +1,9 @@
 local opt = vim.opt
 
+opt.background = 'dark' -- or "light" for light mode
+opt.termguicolors = true -- enable True Color (24-bit) support for the terminal
+opt.guifont = 'JetBrainsMono Nerd Font'
+
 opt.backspace = '2'
 opt.showcmd = true
 opt.laststatus = 2
@@ -25,4 +29,3 @@ opt.relativenumber = true
 opt.number = false
 
 vim.cmd [[ set noswapfile ]] -- prevents the creation of swap files
-
