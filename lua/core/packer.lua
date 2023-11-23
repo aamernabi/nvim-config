@@ -11,15 +11,15 @@ end
 
 local packer_bootstrap = ensure_packer()
 
-
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   -- telescope
   use {
-    'nvim-telescope/telescope.nvim', tag = '0.1.4',
+    'nvim-telescope/telescope.nvim',
+    tag = '0.1.4',
     -- or                            , branch = '0.1.x',
-    requires = { { 'nvim-lua/plenary.nvim' } }
+    requires = { { 'nvim-lua/plenary.nvim' } },
   }
 
   -- color scheme
@@ -51,6 +51,7 @@ return require('packer').startup(function(use)
 
   -- formatters and linters
   use 'stevearc/conform.nvim'
+  use 'mfussenegger/nvim-lint'
   use 'WhoIsSethDaniel/mason-tool-installer.nvim'
 
   -- git plugins
