@@ -66,5 +66,6 @@ return {
     lspconfig.dockerls.setup({ on_attach = on_attach, capabilities = capabilities })
     lspconfig.docker_compose_language_service.setup({ on_attach = on_attach, capabilities = capabilities })
     lspconfig.cssls.setup({ on_attach = on_attach, capabilities = capabilities })
+    lspconfig.angularls.setup({ on_attach = on_attach, capabilities = capabilities })
   end,
 }
