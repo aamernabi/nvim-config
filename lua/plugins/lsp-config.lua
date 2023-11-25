@@ -8,6 +8,7 @@ return {
   config = function()
     local keymap = vim.keymap
     local lsp = vim.lsp
+    local diagnostic = vim.diagnostic
     local lspconfig = require('lspconfig')
     local opts = { noremap = true, silent = true }
 
@@ -24,9 +25,11 @@ return {
 
       keymap.set('n', 'gd', lsp.buf.definition, opts)
       keymap.set('n', 'gi', lsp.buf.implementation, opts)
-      keymap.set('n', 'gr', require('telescope.builtin').lsp_reference, opts)
+      keymap.set('n', 'gr', ':Telescope lsp_references<CR>', opts)
       keymap.set('n', 'K', lsp.buf.hover, opts)
 
+      keymap.set('n', '<leader>D', ':Telescope diagnostics bufnr=0<CR>', opts)
+      keymap.set('n', '<leader>d', diagnostic.open_float, opts)
       keymap.set('n', '<leader>rn', lsp.buf.rename, opts)
       keymap.set('n', '<leader>ca', lsp.buf.code_action, opts)
     end
