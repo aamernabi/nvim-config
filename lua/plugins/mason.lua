@@ -30,7 +30,8 @@ return {
         'eslint_d',
         'black', -- python formatter
         'isort', -- python formatter
-        'pylint',
+        'mypy', -- python static checking
+        'ruff', -- python linting
         'ktlint',
       },
     })

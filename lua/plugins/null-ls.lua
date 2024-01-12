@@ -1,27 +1,15 @@
 return {
   'nvimtools/none-ls.nvim',
-  dependencies = { 'jay-babu/mason-null-ls.nvim' },
   event = { 'BufReadPre', 'BufNewFile' },
   lazy = true,
   config = function()
     local vim_api = vim.api
     local lsp = vim.lsp
     local keymap = vim.keymap
-    local mason_null_ls = require('mason-null-ls')
     local null_ls = require('null-ls')
     local null_ls_utils = require('null-ls.utils')
 
-    mason_null_ls.setup({
-      ensure_installed = {
-        'stylua',
-        'prettier',
-        'eslint_d',
-        'black', -- python formatter
-        'isort', -- python formatter
-        'pylint',
-        'ktlint',
-      },
-    })
+    keymap.set('n', '<leader>gf', lsp.buf.format, {})
 
     local augroup = vim_api.nvim_create_augroup('LspFormatting', {})
     local on_attach = function(current_client, bufnr)
@@ -50,7 +38,8 @@ return {
         null_ls.builtins.formatting.black,
         null_ls.builtins.formatting.prettier,
         null_ls.builtins.formatting.ktlint,
-        null_ls.builtins.diagnostics.pylint,
+        null_ls.builtins.diagnostics.mypy,
+        null_ls.builtins.diagnostics.ruff,
         null_ls.builtins.diagnostics.eslint_d.with({
           condition = function(utils)
             return utils.root_has_file({ '.eslintrc.js', '.eslintrc.cjs' })
