@@ -26,6 +26,6 @@ opt.clipboard = 'unnamedplus'
 opt.autoindent = true
 
 opt.relativenumber = true
-opt.number = false
+opt.number = true
 
 vim.cmd [[ set noswapfile ]] -- prevents the creation of swap files
