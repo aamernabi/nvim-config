@@ -21,9 +21,7 @@ To utilize this configuration:
 
 ### File Structure
 
-- `after`: Contains configurations that should be loaded after the defaults.
 - `lua/core`: Contains the core Lua configuration files.
+- `lua/plugins`: Contains the custom plugin configurations.
 
 ---
-
-If you have any suggestions or improvements, please feel free to contribute!
