@@ -12,6 +12,7 @@ return {
     local builtin = require('telescope.builtin')
     local actions = require('telescope.actions')
     local keymap = vim.keymap
+    builtin.buffers({ sort_lastused = true, ignore_current_buffer = true })
 
     telescope.setup({
       defaults = {
