@@ -4,6 +4,8 @@
 
 This repository contains my personal NeoVim configuration.
 
+You can find the keymaps I use [here](docs/keymaps.md).
+
 ### Installation
 
 To utilize this configuration:

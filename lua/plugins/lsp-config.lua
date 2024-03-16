@@ -13,7 +13,6 @@ return {
     local opts = { noremap = true, silent = true }
 
     -- Change the Diagnostic symbols in the sign column (gutter)
-    -- (not in youtube nvim video)
     local signs = { Error = ' ', Warn = ' ', Hint = '󰠠 ', Info = ' ' }
     for type, icon in pairs(signs) do
       local hl = 'DiagnosticSign' .. type
