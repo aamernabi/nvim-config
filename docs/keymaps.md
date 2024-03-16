@@ -125,7 +125,9 @@
 - `gc` - Toggles the region using linewise comment
 - `gb` - Toggles the region using blockwise comment
 
-### Linewise
+### Examples
+
+#### Linewise
 
 - `gcw` - Toggle from the current cursor position to the next word
 - `gc$` - Toggle from the current cursor position to the end of line
@@ -135,7 +137,7 @@
 - `gcip` - Toggle inside of paragraph
 - `gca}` - Toggle around curly brackets
 
-### Blockwise
+#### Blockwise
 
 - `gb2}` - Toggle until the 2 next blank line
 - `gbaf` - Toggle comment around a function (w/ LSP/treesitter support)
