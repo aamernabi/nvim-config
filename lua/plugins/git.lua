@@ -65,5 +65,24 @@ return {
   },
   {
     'tpope/vim-fugitive',
+    enabled = vim.fn.executable 'git' == 1,
+    cmd = {
+      'Gvdiffsplit',
+      'Gdiffsplit',
+      'Gedit',
+      'Gsplit',
+      'Gread',
+      'Gwrite',
+      'Ggrep',
+      'GMove',
+      'GRename',
+      'GDelete',
+      'GRemove',
+      'Git',
+      'Gstatus',
+    },
+    init = function()
+      vim.g.fugitive_no_maps = 1
+    end,
   },
 }
