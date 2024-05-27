@@ -5,6 +5,7 @@ return {
   dependencies = {
     'nvim-lua/plenary.nvim',
     'nvim-tree/nvim-web-devicons',
+    'nvim-telescope/telescope-ui-select.nvim',
     { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
   },
   config = function()
@@ -28,6 +29,13 @@ return {
           },
         },
       },
+      extensions = {
+        ['ui-select'] = {
+          require('telescope.themes').get_dropdown {
+            -- even more opts
+          },
+        },
+      },
     })
 
     keymap.set('n', '<leader>ff', builtin.find_files, {})
@@ -41,5 +49,6 @@ return {
     end)
 
     telescope.load_extension('fzf')
+    telescope.load_extension('ui-select')
   end,
 }
