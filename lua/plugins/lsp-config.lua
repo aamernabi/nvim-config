@@ -59,7 +59,36 @@ return {
     lspconfig.lua_ls.setup({ on_attach = on_attach, capabilities = capabilities })
     lspconfig.kotlin_language_server.setup({ on_attach = on_attach, capabilities = capabilities })
     lspconfig.jdtls.setup({ on_attach = on_attach, capabilities = capabilities })
-    lspconfig.tsserver.setup({ on_attach = on_attach, capabilities = capabilities })
+    lspconfig.tsserver.setup({
+      on_attach = on_attach,
+      capabilities = capabilities,
+      settings = {
+        typescript = {
+          inlayHints = {
+            includeInlayParameterNameHints = 'all',
+            includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+            includeInlayFunctionParameterTypeHints = true,
+            includeInlayVariableTypeHints = true,
+            includeInlayPropertyDeclarationTypeHints = true,
+            includeInlayFunctionLikeReturnTypeHints = true,
+            includeInlayEnumMemberValueHints = true,
+            -- importModuleSpecifierPreference = 'non-relative',
+          },
+        },
+        javascript = {
+          inlayHints = {
+            includeInlayParameterNameHints = 'all',
+            includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+            includeInlayFunctionParameterTypeHints = true,
+            includeInlayVariableTypeHints = true,
+            includeInlayPropertyDeclarationTypeHints = true,
+            includeInlayFunctionLikeReturnTypeHints = true,
+            includeInlayEnumMemberValueHints = true,
+            -- importModuleSpecifierPreference = 'non-relative',
+          },
+        },
+      },
+    })
     lspconfig.pyright.setup({ on_attach = on_attach, capabilities = capabilities, filetypes = { 'python' } })
     lspconfig.jsonls.setup({ on_attach = on_attach, capabilities = capabilities })
     lspconfig.dockerls.setup({ on_attach = on_attach, capabilities = capabilities })

@@ -25,3 +25,9 @@ keymap.set('n', '<leader>tp', ':tabp<CR>') -- previous tab
 
 -- buffers
 keymap.set('n', '<leader>bx', ':bd<CR>') -- close buffer
+
+-- inlay hint
+keymap.set('n', '<leader>h', function()
+  vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+  print('inlay hints ' .. (vim.lsp.inlay_hint.is_enabled() and 'enabled' or 'disabled'))
+end)

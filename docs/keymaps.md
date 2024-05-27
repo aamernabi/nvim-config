@@ -11,6 +11,9 @@
 - `<leader>nh`: Hide search highlight
 - `x`: Delete without copying character
 - `<leader>xx`: Delete line without copying
+- `<leader>h`: Toggle inlay hints
+- `]d`: Move to next diagnostics (added in neovim 0.10)
+- `K`: Diagnostics hover information from language server (added in neovim 0.10)
 
 ## Visual Mode
 
@@ -136,6 +139,7 @@
 - `gc8k` - Toggle 8 lines before the current cursor position
 - `gcip` - Toggle inside of paragraph
 - `gca}` - Toggle around curly brackets
+- `gci}` - Toggle inside curly brackets
 
 #### Blockwise
 
