@@ -146,3 +146,17 @@
 - `gb2}` - Toggle until the 2 next blank line
 - `gbaf` - Toggle comment around a function (w/ LSP/treesitter support)
 - `gbac` - Toggle comment around a class (w/ LSP/treesitter support)
+
+## jdtls (java language server)
+
+### NORMAL mode
+
+- `<leader>co` - Organize Imports
+- `<leader>crv` - Extract Variable
+- `<leader>crc` - Extract Constant
+
+### VISUAL mode
+
+- `<leader>crc` - Extract Constant
+- `<leader>crm` - Extract Method
+- `<leader>crv` - Extract Variable
