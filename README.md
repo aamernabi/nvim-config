@@ -26,4 +26,7 @@ To utilize this configuration:
 - `lua/core`: Contains the core Lua configuration files.
 - `lua/plugins`: Contains the custom plugin configurations.
 
+Note:
+[ripgrep](https://github.com/BurntSushi/ripgrep?tab=readme-ov-file#installation) is required for telescope's live_grep and grep_string.
+
 ---
