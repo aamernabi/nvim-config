@@ -26,7 +26,13 @@ To utilize this configuration:
 - `lua/core`: Contains the core Lua configuration files.
 - `lua/plugins`: Contains the custom plugin configurations.
 
+### Language Servers (LSPs):
+- Java 17+ is required for `kotlin_language_server` and `jdtls`.
+- Node 18+ is required for `tsserver`, `jsonls`, and `angularls`.
+- Docker is required for `dockerls` and `docker_compose_language_service`.
+- Python 3+ is required for `pyright`, `isSort`, and `mypy`.
+
 Note:
-[ripgrep](https://github.com/BurntSushi/ripgrep?tab=readme-ov-file#installation) is required for telescope's live_grep and grep_string.
+* [ripgrep](https://github.com/BurntSushi/ripgrep?tab=readme-ov-file#installation) is required for telescope's `live_grep` and `grep_string`.
 
 ---
