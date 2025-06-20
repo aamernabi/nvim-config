@@ -34,5 +34,8 @@ To utilize this configuration:
 
 Note:
 * [ripgrep](https://github.com/BurntSushi/ripgrep?tab=readme-ov-file#installation) is required for telescope's `live_grep` and `grep_string`.
+* ```bash
+  sudo apt install make gcc ripgrep unzip git xclip
+  ```
 
 ---
