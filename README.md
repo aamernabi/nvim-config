@@ -14,6 +14,19 @@ To utilize this configuration:
 2. Copy the contents to your NeoVim configuration directory (usually located at ~/.config/nvim).
 3. Use Lazy.nvim, a plugin manager, to install the required plugins.
 
+External Requirements:
+
+- Basic utils: git, make, unzip, C Compiler (gcc)
+- [ripgrep](https://github.com/BurntSushi/ripgrep#installation), [fd-find](https://github.com/sharkdp/fd#installation)
+- Clipboard tool (xclip/xsel)
+- [Nerd Font](https://www.nerdfonts.com/): optional, provides various icons
+- Emoji fonts (Ubuntu only, and only if you want emoji!) `sudo apt install fonts-noto-color-emoji`
+- Language Setup:
+  - If you want to write Typescript, you need npm
+  - If you want to write Golang, you will need go
+  - etc.
+
+
 ### Features
 
 - Configured using Lua to optimize performance and customization.
