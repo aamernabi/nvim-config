@@ -166,6 +166,32 @@ vim.o.scrolloff = 10
 -- See `:help 'confirm'`
 vim.o.confirm = true
 
+-- custom options
+vim.o.termguicolors = true -- enable True Color (24-bit) support for the terminal
+vim.o.guifont = 'JetBrainsMono Nerd Font'
+
+vim.o.backspace = '2'
+vim.o.showcmd = true
+vim.o.laststatus = 2
+vim.o.autowrite = true
+vim.o.cursorline = true
+vim.o.autoread = true
+vim.o.wrap = false
+vim.o.ignorecase = true
+vim.o.smartcase = true
+
+vim.o.splitright = true
+vim.o.splitbelow = true
+
+vim.o.tabstop = 2
+vim.o.shiftwidth = 2
+vim.o.shiftround = true
+vim.o.expandtab = true
+-- vim.o.clipboard = 'unnamedplus'
+vim.o.autoindent = true
+
+vim.cmd [[ set noswapfile ]] -- prevents the creation of swap files
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
@@ -477,6 +503,7 @@ require('lazy').setup({
 
       -- [[ Configure Telescope ]]
       -- See `:help telescope` and `:help telescope.setup()`
+      local actions = require 'telescope.actions'
       require('telescope').setup {
         -- You can put your default mappings / updates / etc. in here
         --  All the info you're looking for is in `:help telescope.setup()`
@@ -487,6 +514,19 @@ require('lazy').setup({
         --   },
         -- },
         -- pickers = {}
+        defaults = {
+          path_display = { 'truncate ' },
+          mappings = {
+            n = {
+              ['<C-d>'] = actions.delete_buffer,
+            },
+            i = {
+              ['<C-k>'] = actions.move_selection_previous,
+              ['<C-j>'] = actions.move_selection_next,
+              ['<C-d>'] = actions.delete_buffer,
+            },
+          },
+        },
         extensions = {
           ['ui-select'] = {
             require('telescope.themes').get_dropdown(),
@@ -791,6 +831,7 @@ require('lazy').setup({
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
         'delve',
+        'ruff', -- python linter and code formatter
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -846,7 +887,8 @@ require('lazy').setup({
         go = { 'gofmt' },
         kotlin = { 'ktlint' },
         -- Conform can also run multiple formatters sequentially
-        python = { 'isort', 'black' },
+        -- python = { 'isort', 'black' },
+        python = { 'ruff' },
         --
         -- You can use 'stop_after_first' to run the first available formatter from the list
         -- javascript = { "prettierd", "prettier", stop_after_first = true },
