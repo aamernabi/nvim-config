@@ -7,7 +7,6 @@
 ## Normal Mode
 
 - `<leader>pv`: Execute Ex command
-- `<C-a>`: Select all
 - `<leader>nh`: Hide search highlight
 - `x`: Delete without copying character
 - `<leader>xx`: Delete line without copying
