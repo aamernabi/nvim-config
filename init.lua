@@ -787,6 +787,7 @@ require('lazy').setup({
       local servers = {
         -- clangd = {},
         gopls = {},
+        kotlin_lsp = {},
         -- pyright = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
@@ -832,6 +833,8 @@ require('lazy').setup({
         'stylua', -- Used to format Lua code
         'delve',
         'ruff', -- python linter and code formatter
+        'pyright', -- LSP for python
+        'taplo', -- LSP for toml (e.g., for pyproject.toml files)
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -848,6 +851,31 @@ require('lazy').setup({
             require('lspconfig')[server_name].setup(server)
           end,
         },
+      }
+    end,
+    init = function()
+      -- this snippet enables auto-completion
+      local lspCapabilities = vim.lsp.protocol.make_client_capabilities()
+      lspCapabilities.textDocument.completion.completionItem.snippetSupport = true
+
+      -- setup pyright with completion capabilities
+      require('lspconfig').pyright.setup {
+        capabilities = lspCapabilities,
+      }
+
+      -- setup taplo with completion capabilities
+      require('lspconfig').taplo.setup {
+        capabilities = lspCapabilities,
+      }
+
+      -- ruff uses an LSP proxy, therefore it needs to be enabled as if it
+      -- were a LSP. In practice, ruff only provides linter-like diagnostics
+      -- and some code actions, and is not a full LSP yet.
+      require('lspconfig').ruff.setup {
+        -- disable ruff as hover provider to avoid conflicts with pyright
+        on_attach = function(client)
+          client.server_capabilities.hoverProvider = false
+        end,
       }
     end,
   },
