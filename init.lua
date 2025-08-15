@@ -796,7 +796,7 @@ require('lazy').setup({
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`ts_ls`) will work just fine
-        -- ts_ls = {},
+        ts_ls = {},
         --
 
         lua_ls = {
@@ -835,6 +835,8 @@ require('lazy').setup({
         'ruff', -- python linter and code formatter
         'pyright', -- LSP for python
         'taplo', -- LSP for toml (e.g., for pyproject.toml files)
+        'prettier',
+        'eslint_d',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
