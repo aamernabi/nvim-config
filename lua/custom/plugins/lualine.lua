@@ -8,6 +8,7 @@ return {
       options = {
         icons_enabled = true,
         theme = 'horizon',
+        -- theme = 'tokyonight',
       },
     }
   end,
